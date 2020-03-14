@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .button {
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <button onclick="start()" id="start" class="button">start</button>
+    <button onclick="pause()" id="pause" class="button">pause</button>
+    <button onclick="stop()" id="stop" class="button">stop</button>
+    <p id="0" class="number">0</p>
+    <script>
+        number=0
+        interal = undefined
+        function start() {
+            interal = setInterval(timer, 1000)
+        }
+
+        function timer() {
+            number++
+            document.getElementById("0").innerHTML = number
+        }
+
+        function pause() {
+            clearInterval(interal)
+        }
+
+        function stop() {
+            number=0
+            clearInterval(interal)
+
+        }
+    </script>
+</center>
+</body>
+</html>
